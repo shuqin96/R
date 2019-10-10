@@ -17,6 +17,7 @@ length(subset1) <- max(length(subset1),length(subset2))
 length(subset2) <- max(length(subset1),length(subset2))
 df <- cbind(subset1,subset2)
 boxplot(df, xaxt='n',outline=FALSE, cex.axis = 1.5)
+legend(x='bottomleft', legend='')
 axis(side=1,at=1:2,labels=c('subset1','subset2'),cex.axis = 1.0)
 # If you still want to add point to the boxplot, go to the next step.
 stripchart(subset1,at=1,vertical = TRUE, method = "jitter", add = TRUE, pch = 20, col = "blue")
