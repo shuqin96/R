@@ -34,8 +34,10 @@ each_data_method_roc <- function() {
 				plot(perf,add = T,lwd=4,cex.lab=1.5, col=collist[i])
 			}
 		}
-		legend("bottomright", bty="n", inset=.005, legend=methodlist.roc, fill=collist, cex = 1.3, text.font=1)
+		legend("bottomright", bty="n", inset=.005, legend=methodlist.roc, fill=collist, cex = 1.3, text.font=1) # 图例颜色用方框展示
 		dev.off()
 	}
 }
 
+## 将图例颜色用线条展示
+legend("bottomright", bty="n", inset=.005, legend=methodlist.roc, lty=1, lwd=2, cex = 1.3, text.font=1)  # lty设置线型，lwd设置线宽
