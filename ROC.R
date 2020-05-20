@@ -31,13 +31,11 @@ each_data_method_roc <- function() {
 				plot(perf,lwd=4,cex.lab=1.5, col=collist[i], main=paste(name," method roc", sep=''))
 			} else {
 				perf <- performance(prediction(data[,method], data$label), measure = "tpr", x.measure = "fpr")
-				plot(perf,add = T,lwd=4,cex.lab=1.5, col=collist[i])
+				plot(perf,add = T,lwd=4,cex.lab=1.5, col=collist[i]) #如需展示不同线型，加入lty参数
 			}
 		}
 		legend("bottomright", bty="n", inset=.005, legend=methodlist.roc, fill=collist, cex = 1.3, text.font=1) # 图例颜色用方框展示
+		legend("bottomright", bty="n", inset=.005, legend=methodlist.roc, lty=1, lwd=2, cex = 1.3, text.font=1) # 图例颜色用线条展示，lty设置线型，lwd设置线宽
 		dev.off()
 	}
 }
-
-## 将图例颜色用线条展示
-legend("bottomright", bty="n", inset=.005, legend=methodlist.roc, lty=1, lwd=2, cex = 1.3, text.font=1)  # lty设置线型，lwd设置线宽
